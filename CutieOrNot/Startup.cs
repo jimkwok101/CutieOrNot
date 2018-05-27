@@ -8,6 +8,7 @@ namespace CutieOrNot
     {
         public void Configuration(IAppBuilder app)
         {
+            //i am new line
             ConfigureAuth(app);
         }
     }
