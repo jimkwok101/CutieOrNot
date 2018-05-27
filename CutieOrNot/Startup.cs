@@ -9,6 +9,7 @@ namespace CutieOrNot
         public void Configuration(IAppBuilder app)
         {
             //i am new line
+            //i added this for new branch purpose
             ConfigureAuth(app);
         }
     }
