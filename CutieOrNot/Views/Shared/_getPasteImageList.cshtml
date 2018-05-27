@@ -1,0 +1,30 @@
+﻿@model IEnumerable<CutieOrNot.Models.PasteImage>
+
+<table id="patientList">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.pasteId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pasteURL)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.pasteDesc)
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.pasteId
+            </td>
+            <td>
+            @item.pasteURL
+            </td>
+            <td>
+             @item.pasteDesc
+            </td>
+        </tr>
+    }
+</table>
+

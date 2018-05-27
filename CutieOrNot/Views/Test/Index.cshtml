@@ -1,0 +1,19 @@
+﻿<br />
+<br />
+@model CutieOrNot.Models.PasteImage
+@using (Ajax.BeginForm("GetPasteImage", "Test", new AjaxOptions
+{//GetPatients is name of method in PatientController
+    InsertionMode = InsertionMode.Replace, //target element(#patientList) will be replaced
+    UpdateTargetId = "pasteImageDiv",
+    LoadingElementId = "loader" // div with .gif loader - that is shown when data are loading
+}))
+{
+    string pasteDesc = "";
+    @Html.EditorFor(x => pasteDesc) //text box with name and id, that it will pass to controller
+   <input type="submit" value="Search" />
+}
+
+<div id="pasteImageDiv"></div>
+<div id="loader" class=" aletr" style="display:none">
+    Loading...<img src="http://gifimage.net/wp-content/uploads/2017/09/ajax-loading-gif-7.gif" />
+</div>

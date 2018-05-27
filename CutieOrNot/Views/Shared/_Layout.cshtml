@@ -4,12 +4,19 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - My ASP.NET Application</title>
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" />
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -35,10 +42,64 @@
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
+    </div>*@
+
+
+    <div class="navbar">
+
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="data-target= #bs-example-navbar-collapse-1">
+                    <span style="color:#fff">Menu</span>
+                </button>
+                <img style="height:60px;" src="https://www.logogarden.com/wp-content/uploads/lg-index/Example-Logo-6.jpg" />
+                @*@Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
+            </div>
+            <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                   
+                 
+                  
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+  <style>
+      
+.navbar{
+  border-bottom: 1px solid #7f7f7f;
+}
+  ul.navbar-nav li a {
+    padding: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #1b1a1a;
+    text-transform: uppercase;
+}
+  ul.navbar-nav  li a:hover{
+    color:#000000;  
+  }
+  .dropdown-menu{
+    min-width: 200px;
+  }
+  ul.dropdown-menu li a{
+    font-size: 12px;
+    padding: 14px;
+    background-color:#c5f2e5;
+
+  }
+
+  </style>
     @RenderSection("scripts", required: false)
 </body>
 </html>
