@@ -13,6 +13,7 @@ namespace CutieOrNot
     {
         protected void Application_Start()
         {
+             //adding for testing
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
